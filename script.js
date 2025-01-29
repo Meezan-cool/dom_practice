@@ -39,7 +39,7 @@
 // console.log(firstLi)
 // But in future if changes happen then the target element would not look like it
 
-
+// Create Eement Via HTML
 let unList = document.querySelector('.un_list');
 let toggleBtn = document.getElementById('un_btn');
 
@@ -51,3 +51,17 @@ toggleBtn.addEventListener('click', ()=>{
 unList.innerHTML = unList.innerHTML + '<li>Item 4</li>'
 
 unList.insertAdjacentHTML('beforeend','<li>Item 5</li>')
+
+// Create Element via CreateElement()
+let newLi = document.createElement('li');
+let newLi1 = document.createElement('li');
+let newLi2 = document.createElement('li');
+newLi.textContent = `Item 6 (Generated Via append())`;
+newLi1.textContent = `Item 8 (Generated Via before() after())`;
+newLi.style.backgroundColor = 'blue'
+newLi.style.color = 'white'
+unList.appendChild(newLi);
+unList.append('Item 7');
+unList.prepend('Item 0');
+unList.lastElementChild.before(newLi1)
+unList.lastElementChild.after(newLi1)
